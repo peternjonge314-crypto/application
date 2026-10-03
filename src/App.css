@@ -1,0 +1,67 @@
+.App { min-height: 100vh; }
+
+.workspace { width: min(100% - 40px, 700px); margin: 0 auto; padding: 30px 0 42px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: #1b2a26; font-size: 19px; font-weight: 750; letter-spacing: -0.7px; text-decoration: none; }
+.brand-mark { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 10px; background: #d7f0e7; color: #237759; font-size: 18px; }
+.topbar-note { display: flex; align-items: center; gap: 8px; color: #77827e; font-size: 12px; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #60b18e; }
+
+.intro { padding: 64px 0 30px; }
+.eyebrow { margin: 0 0 14px; color: #56836f; font-size: 10px; font-weight: 750; letter-spacing: 1.8px; }
+.intro h1 { margin: 0; color: #1c3029; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(42px, 8vw, 62px); font-weight: 400; letter-spacing: -2.2px; line-height: 1.03; }
+.intro h1 span { color: #529074; font-style: italic; }
+.intro-copy { max-width: 440px; margin: 18px 0 0; color: #77827e; font-size: 14px; line-height: 1.7; }
+
+.todo-card { overflow: hidden; border: 1px solid #e8ede9; border-radius: 18px; background: #fff; box-shadow: 0 18px 50px rgb(36 61 49 / 7%); }
+.add-task-form { display: flex; gap: 10px; padding: 21px; border-bottom: 1px solid #edf0ed; }
+.task-input { flex: 1; min-width: 0; height: 46px; padding: 0 15px; border: 1px solid #e5ebe6; border-radius: 10px; outline: none; background: #fbfcfb; color: #273b32; font-size: 14px; transition: border-color 150ms, box-shadow 150ms; }
+.task-input::placeholder { color: #a5ada8; }
+.task-input:focus { border-color: #72ae91; box-shadow: 0 0 0 3px rgb(91 159 122 / 13%); }
+.add-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 112px; padding: 0 17px; border: 0; border-radius: 10px; background: #286e52; color: white; font-size: 13px; font-weight: 650; cursor: pointer; transition: background 150ms, transform 150ms; }
+.add-button:hover { transform: translateY(-1px); background: #205d44; }
+.add-button:focus-visible, .filter-button:focus-visible, .icon-button:focus-visible, .check-button:focus-visible { outline: 3px solid #9bcbb1; outline-offset: 2px; }
+.add-plus { font-size: 19px; font-weight: 400; line-height: 1; }
+
+.list-heading { display: flex; align-items: center; justify-content: space-between; padding: 24px 24px 13px; }
+.list-heading h2 { margin: 0; color: #24372f; font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
+.list-heading p { margin: 5px 0 0; color: #929c96; font-size: 12px; }
+.task-count { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 12px; background: #f2f7f3; color: #56836f; font-size: 12px; font-weight: 700; }
+
+.task-toolbar { display: flex; gap: 5px; padding: 0 24px 12px; }
+.filter-button { padding: 7px 12px; border: 0; border-radius: 8px; background: transparent; color: #8a9690; font-size: 12px; font-weight: 600; cursor: pointer; }
+.filter-button:hover { background: #f5f8f5; color: #47735e; }
+.filter-button.active { background: #e9f4ed; color: #286e52; }
+.task-list { margin: 0; padding: 0 24px 10px; list-style: none; }
+.task-row { display: flex; align-items: center; gap: 12px; min-height: 58px; border-top: 1px solid #f0f2f0; }
+.check-button { display: grid; flex: 0 0 20px; width: 20px; height: 20px; place-items: center; padding: 0; border: 1.5px solid #d3ddd6; border-radius: 7px; background: white; color: white; cursor: pointer; }
+.check-button.checked { border-color: #62a981; background: #62a981; }
+.checkmark { font-size: 13px; line-height: 1; }
+.task-description { flex: 1; min-width: 0; overflow-wrap: anywhere; color: #3b4c44; font-size: 13px; line-height: 1.5; }
+.task-description.completed { color: #a2aaa5; text-decoration: line-through; }
+.task-actions { display: flex; gap: 3px; opacity: 0; transition: opacity 120ms; }
+.task-row:hover .task-actions, .task-row:focus-within .task-actions { opacity: 1; }
+.icon-button { display: grid; width: 30px; height: 30px; place-items: center; border: 0; border-radius: 8px; background: transparent; color: #89958e; font-size: 14px; cursor: pointer; }
+.icon-button:hover { background: #f1f5f1; color: #286e52; }
+.icon-button.delete:hover { background: #fff0ee; color: #bd5b4e; }
+.edit-form { display: flex; flex: 1; gap: 7px; }
+.edit-form .task-input { height: 37px; }
+.save-edit { padding: 0 11px; border: 0; border-radius: 8px; background: #286e52; color: #fff; font-size: 12px; cursor: pointer; }
+.empty-state { display: flex; flex-direction: column; align-items: center; padding: 25px 15px 34px; text-align: center; }
+.empty-icon { display: grid; width: 42px; height: 42px; place-items: center; margin-bottom: 12px; border-radius: 14px; background: #f2f7f3; color: #6b9b7f; font-size: 20px; }
+.empty-state strong { color: #4a5a52; font-size: 13px; font-weight: 650; }
+.empty-state p { margin: 6px 0 0; color: #9aa49e; font-size: 12px; }
+.page-footer { padding-top: 22px; color: #a1aaa4; font-size: 11px; text-align: center; }
+
+@media (max-width: 520px) {
+  .workspace { width: min(100% - 28px, 700px); padding-top: 20px; }
+  .intro { padding-top: 49px; }
+  .topbar-note { font-size: 11px; }
+  .add-task-form { gap: 8px; padding: 15px; }
+  .add-button { min-width: 48px; padding: 0 12px; }
+  .add-button-label { display: none; }
+  .list-heading { padding: 21px 17px 13px; }
+  .task-toolbar { padding-right: 17px; padding-left: 17px; }
+  .task-list { padding-right: 17px; padding-left: 17px; }
+  .task-actions { opacity: 1; }
+}
